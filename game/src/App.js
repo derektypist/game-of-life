@@ -79,8 +79,14 @@ class App extends Component {
     };
 
     this.setState(prevState => ({
-      boardStatus: toggleBoardStatus(prevState);
+      boardStatus: toggleBoardStatus(prevState)
     }));
+  }
+
+  handleStep = () => {
+    const nextStep = prevState => {
+      const boardStatus = prevState.boardStatus;
+    };
   }
 
 
