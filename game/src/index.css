@@ -46,3 +46,41 @@ td {
 .dead:hover {
   background-color: var(--bdr-color);
 }
+
+/* Button */
+button {
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  margin: 20px 10px;
+  padding: 10px 15px;
+  font-size: 18px;
+  color: var(--clr);
+  background-color: var(--bdr-color);
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--alive-hover-clr);
+}
+
+/* Flex Row */
+.flexRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Controls */
+.upperControls, .lowerControls {
+  margin: auto;
+}
+
+.upperControls {
+  width: 425px;
+}
+
+.lowerControls {
+  width: 425px;
+}
