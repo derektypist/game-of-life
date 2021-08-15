@@ -5,7 +5,7 @@
 /* Variables */
 :root {
   --clr: white;
-  --bg-clr-body: rgb(11, 34, 56);
+  --bg-clr-body: #34568b;
   --bg-clr-board: black;
   --alive-clr: white;
   --alive-hover-clr: #cd212a;
@@ -19,4 +19,30 @@ body {
   color: var(--clr);
   background-color: var(--bg-clr-body);
   text-align: center;
+}
+
+/* Table */
+table {
+  margin: 0 auto 20px auto;
+  border-collapse: collapse;
+  background-color: var(--bg-clr-board);
+}
+
+td {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid var(--bdr-color);
+}
+
+/* Alive and Dead */
+.alive {
+  background-color: var(--alive-clr);
+}
+
+.alive:hover {
+  background-color: var(--alive-hover-clr);
+}
+
+.dead:hover {
+  background-color: var(--bdr-color);
 }
