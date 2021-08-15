@@ -44,26 +44,18 @@ const Slider = ({speed, onSpeedChange}) => {
   );
 };
 
+// Set Up App Class
+class App extends Component {
+  state = {
+    boardStatus: myNewBoardStatus(),
+    generation: 0,
+    isGameRunning: false,
+    speed: 500
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  runStopButton = () => {
+    return this.state.isGameRunning ? <button type='button' onClick={this.handleStop}>Stop</button> : <button type='button' onClick={this.handleRun}>Start</button>;
+  }
 }
 
 export default App;
