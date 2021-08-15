@@ -5,7 +5,7 @@ const totalBoardRows = 50;
 const totalBoardColumns = 50;
 
 // Set Up Board Status
-const myNewBoardStatus = (cellStatus = ( )=> Math.random() < 0.3) => {
+const myNewBoardStatus = (cellStatus = () => Math.random() < 0.3) => {
   const grid = [];
   for (let r=0; r< totalBoardRows; r++) {
     grid[r] = [];
@@ -56,6 +56,34 @@ class App extends Component {
   runStopButton = () => {
     return this.state.isGameRunning ? <button type='button' onClick={this.handleStop}>Stop</button> : <button type='button' onClick={this.handleRun}>Start</button>;
   }
+
+  handleClearBoard = () => {
+    this.setState({
+      boardStatus: myNewBoardStatus(() => false),
+      generation: 0
+    });
+  }
+
+  handleNewBoard = () => {
+    this.setState({
+      boardStatus: myNewBoardStatus(),
+      generation: 0
+    });
+  }
+
+  handleToggleCellStatus = (r,c) => {
+    const toggleBoardStatus = prevState => {
+      const clonedBoardStatus = JSON.parse(JSON.stringify(prevState.boardStatus));
+      clonedBoardStatus[r][c] = !clonedBoardStatus[r][c];
+      return clonedBoardStatus;
+    };
+
+    this.setState(prevState => ({
+      boardStatus: toggleBoardStatus(prevState);
+    }));
+  }
+
+
 }
 
 export default App;
