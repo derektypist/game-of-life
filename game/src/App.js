@@ -86,6 +86,23 @@ class App extends Component {
   handleStep = () => {
     const nextStep = prevState => {
       const boardStatus = prevState.boardStatus;
+      // Deep Clone boardStatus
+      const clonedBoardStatus = JSON.parse(JSON.stringify(boardStatus));
+      const amountTrueNeighbours = (r,c) => {
+        const neighbours = [[-1,-1],[-1,0],[-1,1],[0,1],[1,1],[1,0],[1,-1],[0,-1]];
+        return neighbours.reduce((trueNeighbours, neighbour) => {
+          const x = r + neighbour[0];
+          const y = c + neighbour[1];
+          const isNeighbourOnBoard = (x >=0 && x < totalBoardRows && y >=0 && y < totalBoardColumns);
+          // No need to count more than 4 alive neighbours due to rules
+          if (trueNeighbours < 4 && isNeighbourOnBoard && boardStatus[x][y]) {
+            return trueNeighbours + 1;
+          } else {
+            return trueNeighbours;
+          }
+        },0);
+      };
+      
     };
   }
 
