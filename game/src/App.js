@@ -134,6 +134,22 @@ class App extends Component {
     this.setState({isGameRunning: false});
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { isGameRunning, speed } = this.state;
+    const speedChanged = prevState.speed !== speed;
+    const gameStarted = !prevState.isGameRunning && isGameRunning;
+    const gameStopped = prevState.isGameRunning && !isGameRunning;
+
+    if ((isGameRunning && speedChanged) || gameStopped) {
+      clearInterval(this.timerID);
+    }
+
+    if ((isGameRunning && speedChanged) || gameStarted) {
+      this.timerID = setInterval(() => {
+        this.handleStep();
+      },speed);
+    }
+  }
 
 }
 
