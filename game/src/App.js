@@ -151,6 +151,24 @@ class App extends Component {
     }
   }
 
+  render() {
+    const { boardStatus, isGameRunning, generation, speed } = this.state;
+    return(
+      <div>
+        <h1>Game of Life</h1>
+        <BoardGrid boardStatus={boardStatus} onToggleCellStatus={this.handleToggleCellStatus} />
+        <div className='flexRow upperControls'>
+          <span>
+            {'+ '}
+            <Slider speed={speed} onSpeedChange={this.handleSpeedChange} />
+            {' -'}
+          </span>
+          {`Generation: ${generation}`}
+        </div>
+      </div>
+    );
+  }
+
 }
 
 export default App;
