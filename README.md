@@ -26,11 +26,20 @@ The ability to start and stop the board.  Also to set up and clear the board.  S
 
 ## Technologies
 
-Uses HTML5, CSS3, JavaScript and React 17.0.2.
+Uses HTML5, CSS3, Google Fonts, JavaScript and React 17.0.2.
 
 ## Testing
 
 Ensure all the user stories have been met.
+
+## Deployment
+
+Enter the command `cd game` and then `npm start` to begin development.
+
+Go to package.json and add `"homepage":"https://derektypist.github.io/game-of-life"`.  Within scripts, add
+`"predeploy":"npm run build","deploy":"gh-pages -d build"`.  Still in `game` type `npm run deploy`, when asked enter username and password.
+
+Deployed on [GitHub Pages](https://derektypist.github.io/game-of-life) at the main branch.
 
 ## Credits
 
