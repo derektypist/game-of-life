@@ -165,6 +165,12 @@ class App extends Component {
           </span>
           {`Generation: ${generation}`}
         </div>
+        <div className='flexRow lowerControls'>
+          {this.runStopButton()}
+          <button type='button' disabled={isGameRunning} onClick={this.handleStep}>Step</button>
+          <button type='button'onClick={this.handleClearBoard}>Clear Board</button>
+          <button type='button' onClick={this.handleNewBoard}>New Board</button>
+        </div>
       </div>
     );
   }
