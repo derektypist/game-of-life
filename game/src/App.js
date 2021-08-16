@@ -122,6 +122,18 @@ class App extends Component {
     }));
   }
 
+  handleSpeedChange = myNewSpeed => {
+    this.setState({speed: myNewSpeed});
+  }
+
+  handleRun = () => {
+    this.setState({isGameRunning: true});
+  }
+
+  handleStop = () => {
+    this.setState({isGameRunning: false});
+  }
+
 
 }
 
