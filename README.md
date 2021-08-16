@@ -1,6 +1,6 @@
 # Game of Life
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life), Game of Life is a zero-player game, meaning that its evaluation is determined by its initial state, requiring no further input.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life), Game of Life is a zero-player game, meaning that its evaluation is determined by its initial state, requiring no further input.  The aim is to implement this game using the technologies of HTML, CSS, JavaScript and React.
 
 ## UX
 
