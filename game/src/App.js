@@ -103,7 +103,23 @@ class App extends Component {
         },0);
       };
       
+      for (let r=0;r < totalBoardRows; r++) {
+        for (let c=0;c < totalBoardColumns; c++) {
+          const totalTrueNeighbours = amountTrueNeighbours(r,c);
+          if (!boardStatus[r][c]) {
+            if (totalTrueNeighbours === 3) clonedBoardStatus[r][c] = true;
+          } else {
+            if (totalTrueNeighbours < 2 || totalTrueNeighbours > 3) clonedBoardStatus[r][c] = false;
+          }
+        }
+      }
+      return clonedBoardStatus;
     };
+
+    this.setState(prevState => ({
+      boardStatus: nextStep(prevState),
+      generation: prevState.generation + 1
+    }));
   }
 
 
